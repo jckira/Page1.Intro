@@ -1,7 +1,7 @@
-##Public Transportation Information Kiosk
+## Public Transportation Information Kiosk
 Welcome to the Public Transportation Information Kiosk! This innovative system provides accurate routes and fare information for commuters, making public transport more accessible and convenient.
 
-##Features
+## Features
 Route Information: Quickly find the best routes for your journey.
 Fare Calculation: Get accurate fare details based on your selected route.
 User-Friendly Interface: Easy navigation for users of all ages.
