@@ -1,1 +1,9 @@
-The Public Transportation Information Kiosk is a user-friendly, interactive system designed to simplify the experience of commuting by public transport. It provides real-time information on local bus and jeepney routes, along with fare details and discounted fare options for students, senior citizens, and persons with disabilities (PWDs). The kiosk aims to improve the commuting experience by helping users plan their journeys and estimate travel costs through a built-in fare calculator. Commuters can enter their destination and select their mode of transport to get an accurate trip cost, factoring in available discounts. Positioned in high-traffic areas like transit hubs and shopping centers, the kiosk ensures essential transportation details are easily accessible, especially for those unfamiliar with local routes or fare systems. In addition to bus information, it offers detailed jeepney routes, including stops and transfers, allowing for smooth navigation across various modes of transport.
+##Public Transportation Information Kiosk
+Welcome to the Public Transportation Information Kiosk! This innovative system provides accurate routes and fare information for commuters, making public transport more accessible and convenient.
+
+##Features
+Route Information: Quickly find the best routes for your journey.
+Fare Calculation: Get accurate fare details based on your selected route.
+User-Friendly Interface: Easy navigation for users of all ages.
+Discount Verification: Simple forms for verifying student, senior citizen, and PWD discounts.
+Interactive Map: View routes and locations on an interactive map for better navigation.
