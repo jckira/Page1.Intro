@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Map</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ol3/3.17.1/ol.css" />
+	<style>
+		#map {
+			height: 100vh;
+			width: 100%;
+		}
+	</style>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ol3/3.17.1/ol.js"></script>
+	<script>
+		let map;
+		let source = new ol.source.Vector({ wrapX: false });
+
+		function initMap() {
+			map = new ol.Map({
+				target: 'map',
+				layers: [
+					new ol.layer.Tile({
+						source: new ol.source.OSM()
+					})
+				],
+				view: new ol.View({
+					center: ol.proj.fromLonLat([0, 0]),
+					zoom: 2
+				})
+			});
+		}
+
+		function updateMapCenter(lat, lng) {
+			let coords = ol.proj.fromLonLat([lng, lat]);
+			map.getView().setCenter(coords);
+			map.getView().setZoom(13);
+
+			let marker = new ol.Feature({
+				geometry: new ol.geom.Point(coords)
+			});
+
+			let vectorSource = new ol.source.Vector({
+				features: [marker]
+			});
+
+			let markerVectorLayer = new ol.layer.Vector({
+				source: vectorSource
+			});
+
+			map.addLayer(markerVectorLayer);
+		}
+
+		function calculateAndDisplayRoute(start, end) {
+			// Example for creating a line between start and end points
+			let lineFeature = new ol.Feature({
+				geometry: new ol.geom.LineString([
+					ol.proj.fromLonLat([start.lon, start.lat]),
+					ol.proj.fromLonLat([end.lon, end.lat])
+				])
+			});
+
+			let vectorSource = new ol.source.Vector({
+				features: [lineFeature]
+			});
+
+			let routeLayer = new ol.layer.Vector({
+				source: vectorSource,
+				style: new ol.style.Style({
+					stroke: new ol.style.Stroke({
+						color: 'blue',
+						width: 2
+					})
+				})
+			});
+
+			map.addLayer(routeLayer);
+			map.getView().fit(lineFeature.getGeometry().getExtent(), { padding: [50, 50, 50, 50] });
+		}
+
+		window.onload = initMap;
+	</script>
+</head>
+<body>
+	<div id="map"></div>
+</body>
+</html>
